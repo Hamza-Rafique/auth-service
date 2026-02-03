@@ -1,4 +1,3 @@
-// src/core/middlewares/auth.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { TokenService } from '../security/token.service';
 import { Redis } from 'ioredis';
