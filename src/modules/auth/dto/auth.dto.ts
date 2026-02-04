@@ -1,4 +1,3 @@
-// src/modules/auth/dto/auth.dto.ts
 import { z } from 'zod';
 
 // Registration DTO

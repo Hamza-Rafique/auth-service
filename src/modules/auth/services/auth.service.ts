@@ -1,4 +1,3 @@
-// src/modules/auth/services/auth.service.ts
 import { PrismaClient } from '@prisma/client';
 import { Redis } from 'ioredis';
 import {
@@ -12,7 +11,6 @@ import {
 } from '../dto/auth.dto';
 import { TokenService, TokenPayload } from '../../../core/security/token.service';
 import { encryptionService } from '../../../core/security/encryption';
-import { sanitizer } from '../../../core/security/sanitizer';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface AuthResponse {
@@ -43,7 +41,7 @@ export class AuthService {
     private prisma: PrismaClient,
     private redis: Redis,
     private tokenService: TokenService
-  ) {}
+  ) { }
 
   // Register new user
   async register(data: RegisterDto, ipAddress?: string): Promise<AuthResponse> {
@@ -117,7 +115,7 @@ export class AuthService {
       session: {
         id: session.id,
         deviceInfo: session.deviceInfo,
-        ipAddress: session.ipAddress,
+        ipAddress: session.ipAddress ,
         lastActiveAt: session.lastActiveAt,
       },
     };
